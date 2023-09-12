@@ -1,6 +1,8 @@
 package base;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -31,6 +33,7 @@ public class BaseTests {
             System.setProperty("webdriver.chrome.driver", chromeDriverFile.getAbsolutePath());
 
             driver = new ChromeDriver();
+            driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
             driver.manage().window().maximize();
             driver.get("https://the-internet.herokuapp.com/");
 

@@ -16,6 +16,11 @@ public class HomePage {
         navigateTo("Dropdown");
         return new DropdownPage(driver);
     }
+
+    public HoversPage clickHoversPage(){
+        navigateTo("Hovers");
+        return new HoversPage(driver);
+    }
     public void navigateTo(String linkText){
         driver.findElement(By.linkText(linkText)).click();;
     }
